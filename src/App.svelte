@@ -26,6 +26,9 @@
   <p class="read-the-docs">
     Click on the Vite and Svelte logos to learn more
   </p>
+  <h1 class="text-3xl font-bold underline">
+      Hello world!
+    </h1>
 </main>
 
 <style>
