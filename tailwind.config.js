@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}"
+    "./src/**/*.{svelte, html,js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
@@ -22,6 +21,9 @@ export default {
         montserrat: ['"Montserrat"', 'sans-serif'],    // For subheaders
         playfair: ['"Playfair Display"', 'serif']     // for quotes/testimonials
 
+      },
+      fontWeight: {
+      
       }
     },
   },
