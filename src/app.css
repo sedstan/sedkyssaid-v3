@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply font-opensans;
+    @apply text-base;
+    @apply font-normal;
+  }
   h1 {
     @apply font-titillium;
     @apply text-5xl;
