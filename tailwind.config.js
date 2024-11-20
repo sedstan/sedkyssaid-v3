@@ -17,7 +17,7 @@ export default {
         }
       },
       fontFamily: {
-        titillium: ['"Titillium Web"', 'sans-serif'], // Primary font
+        titillium: ['"Titillium Web"', 'sans-serif'], // Headings
         opensans: ['"Open Sans"', 'sans-serif'],      // For body text
         montserrat: ['"Montserrat"', 'sans-serif'],    // For subheaders
         playfair: ['"Playfair Display"', 'serif']     // for quotes/testimonials
