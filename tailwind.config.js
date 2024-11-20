@@ -22,9 +22,6 @@ export default {
         playfair: ['"Playfair Display"', 'serif']     // for quotes/testimonials
 
       },
-      fontWeight: {
-      
-      }
     },
   },
   plugins: [],

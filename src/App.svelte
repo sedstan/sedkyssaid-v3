@@ -1,11 +1,11 @@
-<script lang="ts">
-  import svelteLogo from "./assets/svelte.svg";
-  import viteLogo from "/vite.svg";
-  import Counter from "./lib/Counter.svelte";
-</script>
+<script lang="ts"></script>
 
 <main>
-  <h1 class="font-bold underline">Hello world!</h1>
+  <h1 class="underline">Hello world!</h1>
+  <h2 class="underline">Hello world!</h2>
+  <h3 class="underline">Hello world!</h3>
+  <h4 class="underline">Hello world!</h4>
+  <h5 class="underline">Hello world!</h5>
 </main>
 
 <style>
