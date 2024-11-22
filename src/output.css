@@ -710,9 +710,52 @@ h4 {
   --tw-ring-color: rgb(41 110 180 / var(--tw-ring-opacity, 1));
 }
 
+/* Footer */
+
+.footer-menu {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(41 110 180 / var(--tw-bg-opacity, 1));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.footer-item {
+  font-family: "Titillium Web", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.footer-item:hover {
+  --tw-text-opacity: 1;
+  color: rgb(233 79 55 / var(--tw-text-opacity, 1));
+}
+
+.footer-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: 0.25rem;
+  fill: currentColor;
+}
+
 .underline {
   text-decoration-line: underline;
 }
+
+/* The base layer has global styles */
 
 /* #app {
   max-width: 1280px;

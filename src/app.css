@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* The base layer has global styles */
 @layer base {
   body {
     @apply font-opensans;
@@ -81,6 +82,36 @@
     @apply py-2;
     @apply focus:ring-2;
     @apply focus:ring-primary;
+  }
+
+  /* Footer */
+  .footer-menu {
+    @apply fixed;
+    @apply bottom-0;
+    @apply w-full;
+    @apply bg-primary;
+    @apply text-neutral-light;
+    @apply flex;
+    @apply justify-around;
+    @apply items-center;
+    @apply py-3;
+    @apply shadow-lg;
+  }
+
+  .footer-item {
+    @apply font-titillium;
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
+    @apply text-sm;
+    @apply hover:text-accent;
+  }
+
+  .footer-icon {
+    @apply w-6;
+    @apply h-6;
+    @apply mb-1;
+    @apply fill-current;
   }
 }
 
