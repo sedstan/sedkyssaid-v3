@@ -1,79 +1,143 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* The base layer has global styles */
+@layer base {
+  /* Global styles */
+  body {
+    @apply font-opensans text-base font-normal;
+  }
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  h1 {
+    @apply font-titillium text-5xl font-bold;
+  }
+
+  h2 {
+    @apply font-titillium text-3xl font-semibold;
+  }
+
+  h3 {
+    @apply font-montserrat text-2xl font-semibold;
+  }
+
+  h4 {
+    @apply font-montserrat text-xl font-normal;
+  }
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Components layer for reusable UI components */
+@layer components {
+  /* Section */
+  .section {
+    @apply w-full py-12 px-4 md:px-8;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply font-titillium bg-accent text-white py-3 px-6 rounded-md;
+    @apply hover:bg-secondary focus:ring-2 focus:ring-offset-2 focus:ring-secondary;
+  }
+
+  .btn-secondary {
+    @apply font-titillium bg-secondary text-primary py-2 px-5 rounded-md;
+    @apply hover:bg-highlight focus:ring-2 focus:ring-offset-2 focus:ring-highlight;
+  }
+
+  /* Links */
+  .link {
+    @apply font-titillium text-primary underline;
+    @apply hover:text-accent focus:ring-2 focus:ring-accent;
+  }
+
+  .nav-link {
+    @apply font-montserrat text-neutral-dark hover:text-primary px-4 py-2;
+    @apply focus:ring-2 focus:ring-primary;
+  }
+
+  /* Footer */
+  .footer-menu {
+    @apply fixed bottom-0 w-full bg-primary text-neutral-light;
+    @apply flex justify-around items-center py-3 shadow-lg;
+  }
+
+  .footer-item {
+    @apply font-titillium flex flex-col items-center text-sm;
+    @apply hover:text-accent;
+  }
+
+  .footer-icon {
+    @apply w-6 h-6 mb-1 fill-current;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white shadow-md rounded-lg overflow-hidden;
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .card-header {
+    @apply font-titillium text-xl font-bold text-primary mb-2;
+  }
+
+  .card-body {
+    @apply font-lora text-neutral-dark text-base p-4;
+  }
+
+  /* Form Inputs */
+  .input {
+    @apply w-full py-2 px-3 border border-gray-300 rounded-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  .textarea {
+    @apply w-full py-2 px-3 border border-gray-300 rounded-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  .form-label {
+    @apply font-montserrat text-neutral-dark mb-1;
+  }
+
+  /* Badges */
+  .badge {
+    @apply font-montserrat text-xs text-white bg-primary rounded-full;
+    @apply px-3 py-1 inline-block hover:bg-accent;
+  }
+
+  /* Timeline Items */
+  .timeline-item {
+    @apply flex flex-col md:flex-row mb-6;
+  }
+
+  .timeline-dot {
+    @apply w-4 h-4 bg-secondary rounded-full flex-shrink-0 mt-2;
+  }
+
+  .timeline-content {
+    @apply ml-4 font-lora text-neutral-dark;
+  }
+
+  .timeline-date {
+    @apply font-montserrat text-sm text-primary mb-1;
+  }
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+/* Utilities layer for project-specific utilities */
+@layer utilities {
+  .btn-spacing {
+    @apply mt-4 mb-6;
+  }
+
+  .content-spacing {
+    @apply mb-8 mt-6;
+  }
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-.card {
-  padding: 2em;
-}
-
-#app {
+/* #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+} */
