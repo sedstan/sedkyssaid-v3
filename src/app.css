@@ -28,6 +28,60 @@
     @apply text-xl;
     @apply font-normal;
   }
+
+  /* Section */
+  .section {
+    @apply w-full;
+    @apply py-12;
+    @apply px-4;
+    @apply md:px-8;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply font-titillium;
+    @apply bg-accent;
+    @apply text-white;
+    @apply py-3;
+    @apply px-6;
+    @apply rounded-md;
+    @apply hover:bg-secondary;
+    @apply focus:ring-2;
+    @apply focus:ring-offset-2;
+    @apply focus:ring-secondary;
+  }
+
+  .btn-secondary {
+    @apply font-titillium;
+    @apply bg-secondary;
+    @apply text-primary;
+    @apply py-2;
+    @apply px-5;
+    @apply rounded-md;
+    @apply hover:bg-highlight;
+    @apply focus:ring-2;
+    @apply focus:ring-offset-2;
+    @apply focus:ring-highlight;
+  }
+
+  /* Links */
+  .link {
+    @apply font-titillium;
+    @apply text-primary;
+    @apply underline;
+    @apply hover:text-accent;
+    @apply focus:ring-2;
+    @apply focus:ring-accent;
+  }
+  .nav-link {
+    @apply font-montserrat;
+    @apply text-neutral-dark;
+    @apply hover:text-primary;
+    @apply px-4;
+    @apply py-2;
+    @apply focus:ring-2;
+    @apply focus:ring-primary;
+  }
 }
 
 /* #app {

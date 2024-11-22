@@ -9,7 +9,7 @@ export default {
         primary: '#296EB4',     // Deep Blue
         secondary: '#FDB833',   // Bright Yelllow-Orange
         accent: '#E94F37',      // Vibrant Red-Orange
-        hightlight: '#B0fe76',  // Light Green
+        highlight: '#B0fe76',  // Light Green
         neutral: {
           dark: '#333333',      // Dark Grey
           light: '#FFFFFF'      //White
