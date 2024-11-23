@@ -5,7 +5,7 @@
 </script>
 
 <header id="header" class="">
-  <img src={logo} alt="A logo" class="h-auto max-w-60" />
-  <nav id="desktop" class="">Desktop Nav</nav>
+  <img src={logo} alt="A logo" class="h-auto max-w-12 md: max-w-" />
+  <nav id="desktop" class="hidden">Desktop Nav</nav>
 </header>
 <nav id="mobile">Mobile Nav</nav>
