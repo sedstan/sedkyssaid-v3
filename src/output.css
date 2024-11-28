@@ -630,8 +630,20 @@ h4 {
   bottom: 0px;
 }
 
+.top-0 {
+  top: 0px;
+}
+
 .z-10 {
   z-index: 10;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.block {
+  display: block;
 }
 
 .flex {
@@ -650,8 +662,20 @@ h4 {
   max-width: 4rem;
 }
 
-.resize {
-  resize: both;
+.max-w-32 {
+  max-width: 8rem;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .bg-primary {
@@ -659,11 +683,43 @@ h4 {
   background-color: rgb(41 110 180 / var(--tw-bg-opacity, 1));
 }
 
+.align-middle {
+  vertical-align: middle;
+}
+
 /* The base layer has global styles */
 
 /* Components layer for reusable UI components */
 
 /* Utilities layer for project-specific utilities */
+
+@media (min-width: 640px) {
+  .sm\:sticky {
+    position: sticky;
+  }
+
+  .sm\:bottom-0 {
+    bottom: 0px;
+  }
+
+  .sm\:justify-center {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:sticky {
+    position: sticky;
+  }
+
+  .md\:bottom-0 {
+    bottom: 0px;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+}
 
 @media (min-width: 1024px) {
   .lg\:z-0 {
@@ -680,5 +736,9 @@ h4 {
 
   .lg\:max-w-32 {
     max-width: 8rem;
+  }
+
+  .lg\:justify-normal {
+    justify-content: normal;
   }
 }

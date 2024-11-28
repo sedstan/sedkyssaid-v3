@@ -1,9 +1,14 @@
 <script lang="ts">
-  import Header from "./components/Header/Header.svelte";
+  import DesktopHeader from "./lib/components/Headers/DesktopHeader.svelte";
+  import MobileHeader from "./lib/components/Headers/MobileHeader.svelte";
 </script>
 
 <main>
-  <Header />
+  {#if window.innerWidth > 1024}
+    <MobileHeader />
+  {:else}
+    <DesktopHeader />
+  {/if}
   <section class="section">
     <p>This is a pragraph</p>
     <p>This is a pragraph</p>
