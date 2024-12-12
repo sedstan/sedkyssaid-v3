@@ -151,7 +151,12 @@
 
 /* Media query for larger screens */
 @layer utilities {
-  @media (min-width: 768px) {
+  @media (max-width: 1024px ) {
+    .desktop-nav {
+      @apply hidden;
+    }
+  }
+  @media (min-width: 1024px) {
     .mobile-nav {
       @apply hidden;
     }
