@@ -147,6 +147,7 @@
   .nav-link {
     @apply text-sm font-medium hover:text-yellow-400 transition-colors;
   }
+  
 }
 
 /* Media query for larger screens */

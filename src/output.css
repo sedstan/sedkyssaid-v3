@@ -664,8 +664,16 @@ h4 {
   color: rgb(250 204 21 / var(--tw-text-opacity, 1));
 }
 
+.h-24 {
+  height: 6rem;
+}
+
 .h-6 {
   height: 1.5rem;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .w-6 {
