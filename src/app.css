@@ -4,6 +4,7 @@
 
 /* The base layer has global styles */
 @layer base {
+
   /* Global styles */
   body {
     @apply font-opensans text-base font-normal;
@@ -28,6 +29,7 @@
 
 /* Components layer for reusable UI components */
 @layer components {
+
   /* Section */
   .section {
     @apply w-full py-12 px-4 md:px-8;
@@ -51,9 +53,13 @@
   }
 
   .nav-link {
-    @apply font-montserrat text-neutral-dark hover:text-primary px-4 py-2;
+    @apply text-sm font-montserrat text-neutral-light hover:text-highlight px-4 py-2 transition-colors;
     @apply focus:ring-2 focus:ring-primary;
   }
+
+  /* .nav-link {
+       @apply text-sm font-medium hover:text-yellow-400 transition-colors;
+     } */
 
   /* Footer */
   .footer-menu {
@@ -137,26 +143,29 @@
 /* Custom component styles */
 @layer components {
   .mobile-nav {
-    @apply fixed bottom-0 w-full bg-gray-800 text-white flex justify-around py-3;
+    @apply fixed bottom-0 w-full bg-primary text-neutral-light flex justify-around py-3;
+  }
+
+  .desktop-nav {
+    @apply bg-primary top-0 w-full text-neutral-light;
   }
 
   .nav-items {
     @apply flex items-center gap-4;
   }
 
-  .nav-link {
-    @apply text-sm font-medium hover:text-yellow-400 transition-colors;
-  }
-  
+
+
 }
 
 /* Media query for larger screens */
 @layer utilities {
-  @media (max-width: 1024px ) {
+  @media (max-width: 1024px) {
     .desktop-nav {
       @apply hidden;
     }
   }
+
   @media (min-width: 1024px) {
     .mobile-nav {
       @apply hidden;

@@ -603,13 +603,18 @@ h4 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   --tw-text-opacity: 1;
-  color: rgb(51 51 51 / var(--tw-text-opacity, 1));
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .nav-link:hover {
   --tw-text-opacity: 1;
-  color: rgb(41 110 180 / var(--tw-text-opacity, 1));
+  color: rgb(176 254 118 / var(--tw-text-opacity, 1));
 }
 
 .nav-link:focus {
@@ -619,6 +624,10 @@ h4 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(41 110 180 / var(--tw-ring-opacity, 1));
 }
+
+/* .nav-link {
+       @apply text-sm font-medium hover:text-yellow-400 transition-colors;
+     } */
 
 /* Footer */
 
@@ -637,9 +646,18 @@ h4 {
   width: 100%;
   justify-content: space-around;
   --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+  background-color: rgb(41 110 180 / var(--tw-bg-opacity, 1));
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.desktop-nav {
+  top: 0px;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(41 110 180 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
@@ -648,20 +666,6 @@ h4 {
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.nav-link {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.nav-link:hover {
-  --tw-text-opacity: 1;
-  color: rgb(250 204 21 / var(--tw-text-opacity, 1));
 }
 
 .h-24 {
@@ -680,7 +684,12 @@ h4 {
   width: 1.5rem;
 }
 
-@media (max-width: 1024px ) {
+.text-neutral-light {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+@media (max-width: 1024px) {
   .desktop-nav {
     display: none;
   }
