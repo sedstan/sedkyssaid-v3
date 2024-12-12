@@ -133,3 +133,27 @@
     @apply mb-8 mt-6;
   }
 }
+
+/* Custom component styles */
+@layer components {
+  .mobile-nav {
+    @apply fixed bottom-0 w-full bg-gray-800 text-white flex justify-around py-3;
+  }
+
+  .nav-items {
+    @apply flex items-center gap-4;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium hover:text-yellow-400 transition-colors;
+  }
+}
+
+/* Media query for larger screens */
+@layer utilities {
+  @media (min-width: 768px) {
+    .mobile-nav {
+      @apply hidden;
+    }
+  }
+}
