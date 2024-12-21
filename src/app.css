@@ -57,9 +57,16 @@
     @apply focus:ring-2 focus:ring-primary;
   }
 
-  /* .nav-link {
-       @apply text-sm font-medium hover:text-yellow-400 transition-colors;
-     } */
+  .nav-link:focus,
+  .nav-link:active {
+    background-color: #f0f4f8;
+    /* Subtle background change */
+    border-radius: 0.5rem;
+    /* Rounded corners */
+    transform: scale(1.05);
+    /* Slight scale effect */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
 
   /* Footer */
   .footer-menu {
