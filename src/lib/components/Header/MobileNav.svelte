@@ -149,7 +149,6 @@
               on:click={navigateAndCloseModal}
             >
               <svelte:component this={item.icon} label={item.label} />
-              <span class="modal-label">{item.label}</span>
             </a>
           </li>
         {/each}
@@ -163,7 +162,7 @@
     @apply fixed inset-0 flex items-center justify-center bg-black bg-opacity-50;
   }
   .modal {
-    @apply relative w-full max-w-sm scale-95 transform rounded-lg bg-white p-6 opacity-0 shadow-lg transition-transform;
+    @apply relative w-full max-w-sm scale-95 transform rounded-lg bg-primary p-6 opacity-0 shadow-lg transition-transform;
   }
   .modal[data-visible="true"] {
     @apply scale-100 opacity-100;
@@ -184,13 +183,10 @@
     @apply flex flex-col items-center gap-2;
   }
   .modal-link {
-    @apply flex flex-col items-center text-neutral-dark hover:text-accent focus:ring-2 focus:ring-accent;
+    @apply flex flex-col items-center text-neutral-light hover:text-highlight focus:ring-2 focus:ring-accent;
   }
   .modal-link:focus,
   .modal-link:active {
     @apply bg-[#f0f4f8] rounded-lg transform scale-105 transition-transform;
-  }
-  .modal-label {
-    @apply mt-2 font-montserrat text-sm;
   }
 </style>
