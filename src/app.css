@@ -66,6 +66,7 @@
     transform: scale(1.05);
     /* Slight scale effect */
     transition: transform 0.2s ease, background-color 0.2s ease;
+    @apply text-neutral-dark;
   }
 
   /* Footer */

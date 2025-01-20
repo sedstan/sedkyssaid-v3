@@ -187,6 +187,10 @@
   }
   .modal-link:focus,
   .modal-link:active {
+    background-color: #f0f4f8; /* Subtle background for modal links */
+  border-radius: 0.5rem;
+  transform: scale(1.05);
+  transition: transform 0.2s ease, background-color 0.2s ease;
     @apply bg-[#f0f4f8] rounded-lg transform scale-105 transition-transform;
   }
 </style>
