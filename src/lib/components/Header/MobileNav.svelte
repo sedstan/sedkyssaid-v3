@@ -30,6 +30,7 @@
   let visibleItems: NavItem[] = [];
   let hiddenItems: NavItem[] = [];
   let isModalOpen = false;
+  let activeLink: string = ""; // Track active link
 
   let closeButton: HTMLButtonElement;
   let modalTrigger: HTMLButtonElement;
@@ -42,6 +43,10 @@
       visibleItems = navItems;
       hiddenItems = [];
     }
+  };
+
+  const setActiveLink = (href: string) => {
+    activeLink = href;
   };
 
   const toggleModal = () => {
@@ -81,12 +86,20 @@
         <a
           href={item.href}
           class="nav-link flex flex-col items-center focus:ring-2 focus:outline-none"
+          aria-current={activeLink === item.href ? "page" : undefined}
+          on:click={() => setActiveLink(item.href)}
         >
           <svelte:component
             this={item.icon}
-            label={item.label}
-            class="group-focus:fill-blue-500 group-active:fill-blue-700 transition-colors"
+            class={`icon ${activeLink === item.href ? 'active-icon' : ''}`}
           />
+          <span
+            class={activeLink === item.href
+              ? "text-dark"
+              : "text-neutral-light"}
+          >
+            {item.label}
+          </span>
         </a>
       </li>
     {/each}
@@ -128,6 +141,7 @@
       <!-- Close Button -->
       <button
         type="button"
+        bind:this={closeButton}
         class="modal-close"
         aria-label="Close modal"
         on:click={toggleModal}
@@ -146,9 +160,24 @@
             <a
               href={item.href}
               class="modal-link flex flex-col items-center focus:ring-2 focus:ring-accent"
-              on:click={navigateAndCloseModal}
+              aria-current={activeLink === item.href ? "page" : undefined}
+              on:click={() => {
+                setActiveLink(item.href);
+                toggleModal();
+              }}
             >
-              <svelte:component this={item.icon} label={item.label} />
+              <svelte:component
+                this={item.icon}
+                class="icon"
+                style={`fill: ${activeLink === item.href ? '#1a1a1a' : '#ccc'}`}
+              />
+              <span
+                class={activeLink === item.href
+                  ? "text-dark"
+                  : "text-neutral-light"}
+              >
+                {item.label}
+              </span>
             </a>
           </li>
         {/each}
@@ -158,6 +187,22 @@
 {/if}
 
 <style>
+  .text-dark {
+    color: #1a1a1a;
+  }
+  /* .icon {
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease; /* Smooth fill colour transition */
+    /* fill: #ccc !important; */
+ /* } */
+
+ /*.icon {
+  fill: #ccc !important;
+}*/
+/*.active-icon {
+  fill: #1a1a1a !important;
+}*/
   .modal-backdrop {
     @apply fixed inset-0 flex items-center justify-center bg-black bg-opacity-50;
   }
@@ -188,9 +233,11 @@
   .modal-link:focus,
   .modal-link:active {
     background-color: #f0f4f8; /* Subtle background for modal links */
-  border-radius: 0.5rem;
-  transform: scale(1.05);
-  transition: transform 0.2s ease, background-color 0.2s ease;
-    @apply bg-[#f0f4f8] rounded-lg transform scale-105 transition-transform;
+    border-radius: 0.5rem;
+    transform: scale(1.05);
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
+    @apply scale-105 transform rounded-lg bg-[#f0f4f8] transition-transform;
   }
 </style>
