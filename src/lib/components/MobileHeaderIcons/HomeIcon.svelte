@@ -1,9 +1,10 @@
 <script lang="ts">
+  export let fill: string = "none";
 </script>
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  fill="none"
+  fill={fill}
   viewBox="0 0 24 24"
   stroke-width="1.5"
   stroke="#ffffff"

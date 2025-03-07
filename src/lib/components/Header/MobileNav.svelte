@@ -47,6 +47,7 @@
 
   const setActiveLink = (href: string) => {
     activeLink = href;
+    localStorage.setItem("activeLink", href);
   };
 
   const toggleModal = () => {
@@ -68,6 +69,11 @@
   };
 
   onMount(() => {
+    const savedLink = localStorage.getItem("activeLink");
+    if (savedLink) {
+      activeLink = savedLink;
+    }
+    
     window.addEventListener("resize", updateNavItems);
     document.addEventListener("keydown", handleEscapeKey); // Global listener for Escape key
     updateNavItems();
@@ -91,7 +97,9 @@
         >
           <svelte:component
             this={item.icon}
-            class={`icon ${activeLink === item.href ? 'active-icon' : ''}`}
+            fill={activeLink === item.href ? "#1a1a1a" : "none"}
+            class={`icon ${activeLink === item.href ? "active-icon" : ""}`}
+            on:click={() => setActiveLink(item.href)}
           />
           <span
             class={activeLink === item.href
@@ -169,7 +177,7 @@
               <svelte:component
                 this={item.icon}
                 class="icon"
-                style={`fill: ${activeLink === item.href ? '#1a1a1a' : '#ccc'}`}
+                style={`fill: ${activeLink === item.href ? "#1a1a1a" : "none"}`}
               />
               <span
                 class={activeLink === item.href
@@ -187,6 +195,13 @@
 {/if}
 
 <style>
+  .icon {
+    transition: fill 0.3s ease-in-out;
+  }
+
+  .active-icon {
+    fill: #1a1a1a;
+  }
   .text-dark {
     color: #1a1a1a;
   }
@@ -194,13 +209,13 @@
     width: 24px;
     height: 24px;
     transition: fill 0.3s ease; /* Smooth fill colour transition */
-    /* fill: #ccc !important; */
- /* } */
+  /* fill: #ccc !important; */
+  /* } */
 
- /*.icon {
+  /*.icon {
   fill: #ccc !important;
 }*/
-/*.active-icon {
+  /*.active-icon {
   fill: #1a1a1a !important;
 }*/
   .modal-backdrop {
