@@ -4,8 +4,8 @@
   import AboutIcon from "../MobileHeaderIcons/AboutIcon.svelte";
   import TimelineIcon from "../MobileHeaderIcons/TimelineIcon.svelte";
   import CertificateIcon from "../MobileHeaderIcons/CertificateIcon.svelte";
-  import { onMount, onDestroy } from "svelte";
-  import { fade, fly, scale } from "svelte/transition";
+  import { onMount } from "svelte";
+  import { fade, scale } from "svelte/transition";
 
   interface NavItem {
     id: string;
@@ -73,7 +73,7 @@
     if (savedLink) {
       activeLink = savedLink;
     }
-    
+
     window.addEventListener("resize", updateNavItems);
     document.addEventListener("keydown", handleEscapeKey); // Global listener for Escape key
     updateNavItems();
@@ -91,7 +91,7 @@
       <li in:fly={{ x: -50, duration: 300 }}>
         <a
           href={item.href}
-          class="nav-link flex flex-col items-center focus:ring-2 focus:outline-none"
+          class="nav-link flex flex-col items-center"
           aria-current={activeLink === item.href ? "page" : undefined}
           on:click={() => setActiveLink(item.href)}
         >
@@ -119,7 +119,7 @@
           bind:this={modalTrigger}
           type="button"
           on:click={toggleModal}
-          class="nav-link flex flex-col items-center focus:ring-2 focus:ring-accent"
+          class="nav-link flex flex-col items-center"
         >
           <span>More</span>
         </button>
@@ -167,7 +167,7 @@
           <li class="modal-item flex flex-col items-center">
             <a
               href={item.href}
-              class="modal-link flex flex-col items-center focus:ring-2 focus:ring-accent"
+              class="modal-link flex flex-col items-center"
               aria-current={activeLink === item.href ? "page" : undefined}
               on:click={() => {
                 setActiveLink(item.href);
@@ -176,8 +176,9 @@
             >
               <svelte:component
                 this={item.icon}
-                class="icon"
-                style={`fill: ${activeLink === item.href ? "#1a1a1a" : "none"}`}
+                fill={activeLink === item.href ? "#1a1a1a" : "none"}
+                class={`icon ${activeLink === item.href ? "active-icon" : ""}`}
+                on:click={() => setActiveLink(item.href)}
               />
               <span
                 class={activeLink === item.href
@@ -195,29 +196,9 @@
 {/if}
 
 <style>
-  .icon {
-    transition: fill 0.3s ease-in-out;
-  }
-
-  .active-icon {
-    fill: #1a1a1a;
-  }
   .text-dark {
     color: #1a1a1a;
   }
-  /* .icon {
-    width: 24px;
-    height: 24px;
-    transition: fill 0.3s ease; /* Smooth fill colour transition */
-  /* fill: #ccc !important; */
-  /* } */
-
-  /*.icon {
-  fill: #ccc !important;
-}*/
-  /*.active-icon {
-  fill: #1a1a1a !important;
-}*/
   .modal-backdrop {
     @apply fixed inset-0 flex items-center justify-center bg-black bg-opacity-50;
   }
@@ -247,7 +228,6 @@
   }
   .modal-link:focus,
   .modal-link:active {
-    background-color: #f0f4f8; /* Subtle background for modal links */
     border-radius: 0.5rem;
     transform: scale(1.05);
     transition:

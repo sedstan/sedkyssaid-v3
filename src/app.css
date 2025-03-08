@@ -59,12 +59,8 @@
 
   .nav-link:focus,
   .nav-link:active {
-    background-color: #f0f4f8;
-    /* Subtle background change */
     border-radius: 0.5rem;
-    /* Rounded corners */
     transform: scale(1.05);
-    /* Slight scale effect */
     transition: transform 0.2s ease, background-color 0.2s ease;
     @apply text-neutral-dark;
   }
